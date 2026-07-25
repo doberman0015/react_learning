@@ -1,19 +1,24 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button';
 import cls from './QuestionCard.module.css';
 
-export const QuestionCard = () => {
+export const QuestionCard = ( props ) => {
+
+    const { card } = props;
+    const navigate = useNavigate();
+    
     return (
         <div className={cls.card}>
             <div className={cls.cardLabels}>
-                <div>Level: 1</div>
-                <div>Not Completed</div>
+                <div>Level: {card.level}</div>
+                <div>{card.completed ? "Completed" : "Not Completed"}</div>
             </div>
-            <h5 className={cls.cardTitle}>Question Card</h5>
+            <h5 className={cls.cardTitle}>{card.question}</h5>
             <div className={cls.cardAnswer}>
                 <span className={cls.cardAnswerLabel}>short answer:</span>
-                <p className={cls.cardAnswerText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966</p>
+                <p className={cls.cardAnswerText}>{card.answer}</p>
             </div>
-            <Button className={cls.viewButton} onClick={() => {}} >View</Button>
+            <Button className={cls.viewButton} onClick={() => navigate(`/question/${card.id}`)} >View</Button>
         </div>
     );
 };
