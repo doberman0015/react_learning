@@ -2,7 +2,7 @@ import {} from 'react';
 import cls from "./Button.module.css";
 
 export const Button = (props) => {
-    const { onClick, children, className, isActive, isDisabled } = props;
+    const { onClick, children, className = '', isActive, isDisabled } = props;
     console.log('cls',cls);
     
     return (

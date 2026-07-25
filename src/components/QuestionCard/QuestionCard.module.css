@@ -1,0 +1,35 @@
+.card{
+    width: 300px;
+    min-height: 350px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+    box-shadow: 0 0 8px 5px var(--card-text-box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+.card .viewButton{
+    align-self: flex-end;
+}
+.cardLabels{
+    display: flex;
+    gap: 10px;
+}
+.cardTitle{
+    font-size: 24px;
+}
+.cardAnswer{
+    
+    margin-top: auto;
+}
+.cardAnswerLabel{
+    font-weight: 600;
+}
+.cardAnswerText{
+    font-size: 14px;
+    margin: 0;
+}

@@ -6,6 +6,10 @@
   --btn-bg-color: #383b3f;
   --btn-text-color: #fff;
 
+  --card-bg-color: #343a3f;
+  --card-text-color: #000;
+  --card-text-box-shadow: rgba(255,255,255,0.05);
+
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
 
   font: 18px/145% var(--sans);
@@ -27,6 +31,9 @@
     --main-text-color: #23272f;
     --btn-bg-color: #16444f;
     --btn-text-color: #57c4dc;
+    --card-bg-color: #ebedf0;
+    --card-text-color: #000;
+    --card-text-box-shadow: rgba(0,0,0,0.05);
   }
 }
 
@@ -36,6 +43,9 @@
     --main-text-color: #fff;
     --btn-bg-color: #383b3f;
     --btn-text-color: #fff;
+    --card-bg-color: #343a3f;
+    --card-text-color: #fff;
+    --card-text-box-shadow: rgba(255,255,255,0.05);
   }
 }
 
