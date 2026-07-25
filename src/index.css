@@ -3,6 +3,9 @@
   --main-bg-color: #23272f;
   --main-text-color: #fff;
 
+  --btn-bg-color: #383b3f;
+  --btn-text-color: #fff;
+
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
 
   font: 18px/145% var(--sans);
@@ -22,6 +25,8 @@
   :root {
     --main-bg-color: #fff;
     --main-text-color: #23272f;
+    --btn-bg-color: #16444f;
+    --btn-text-color: #57c4dc;
   }
 }
 
@@ -29,6 +34,8 @@
   :root {
     --main-bg-color: #23272f;
     --main-text-color: #fff;
+    --btn-bg-color: #383b3f;
+    --btn-text-color: #fff;
   }
 }
 
