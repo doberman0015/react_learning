@@ -4,6 +4,7 @@ import { useActionState } from 'react';
 import { Button } from '../../components/Button';
 import { toast } from 'react-toastify';
 import { delayFn } from '../../helpers/delayFn';
+import { Loader } from '../../components/Loader';
 
 const createCardAction = async ( _prevState, formData ) => {
 
@@ -50,6 +51,8 @@ export const AddQuestionPage = () => {
     const [formState, formAction, isPending] = useActionState( createCardAction, { clearForm : true });
 
     return (
+        <>
+        {isPending && <Loader />}
         <div className={cls.addQuestionFormWrpp}>
             <h1 className={cls.formTitle}>Add new question</h1>
             <form action={formAction} className={cls.form}>
@@ -102,7 +105,6 @@ export const AddQuestionPage = () => {
                         className={cls.textarea}
                         cols="30" 
                         rows="5" 
-                        required 
                         placeholder="please enter a resources separated by commas">
                     </textarea>
                 </div>
@@ -138,5 +140,6 @@ export const AddQuestionPage = () => {
                 </div>
             </form>
         </div>
+        </>
     );
 };
