@@ -1,6 +1,6 @@
+import cls from './QuestionCard.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button';
-import cls from './QuestionCard.module.css';
 import { Badge } from '../Badge';
 
 export const QuestionCard = ( props ) => {

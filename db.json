@@ -130,7 +130,7 @@
         "https://react.dev/reference/react/useRef"
       ],
       "level": 2,
-      "completed": false,
+      "completed": true,
       "editDate": "25.07.2026, 17:41"
     },
     {
@@ -154,7 +154,7 @@
         "https://react.dev/reference/react/useCallback"
       ],
       "level": 3,
-      "completed": false,
+      "completed": true,
       "editDate": "25.07.2026, 17:41"
     },
     {
@@ -178,7 +178,7 @@
         "https://react.dev/learn/passing-data-deeply-with-context"
       ],
       "level": 2,
-      "completed": false,
+      "completed": true,
       "editDate": "25.07.2026, 17:41"
     },
     {
@@ -394,7 +394,7 @@
         "https://react.dev/reference/react/memo"
       ],
       "level": 3,
-      "completed": false,
+      "completed": true,
       "editDate": "25.07.2026, 17:41"
     },
     {
@@ -613,5 +613,6 @@
       "completed": false,
       "editDate": "25.07.2026, 17:41"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

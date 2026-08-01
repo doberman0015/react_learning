@@ -89,3 +89,27 @@
     transform: rotate(360deg);
   }
 }
+
+/* small loader */
+.smallLoader{
+  --color-1: #2973b2;
+  --size: 1px;
+
+  width: calc(18 * var(--size));
+  height: calc(18 * var(--size));
+  border: calc(3 * var(--size)) dotted var(--color-1);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

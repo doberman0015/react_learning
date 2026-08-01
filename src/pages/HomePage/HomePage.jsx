@@ -50,7 +50,6 @@ export const HomePage = () => {
     //         setIsLoading(false);
     //     }
     // }
-
     // console.log('questions',questions);
     
     const cards = useMemo(() => {
@@ -151,7 +150,7 @@ export const HomePage = () => {
                 <SearchInput value={searchValue} onChange={searchValueHandler} />
 
                 <select value={sortSelectValue} onChange={onSortSelectChangeHandler} className={cls.select}>
-                    <option value="">count</option>
+                    <option value="">sort by</option>
                     <hr />
                     <option value="level_asc">level ASC</option>
                     <option value="level_desc">level DESC</option>
@@ -160,7 +159,7 @@ export const HomePage = () => {
                 </select>
 
                 <select value={countSelectValue} onChange={onCountSelectChangeHandler} className={cls.select}>
-                    <option value="">sort by</option>
+                    <option value="">count</option>
                     <hr />
                     <option value="10">10</option>
                     <option value="15">15</option>
