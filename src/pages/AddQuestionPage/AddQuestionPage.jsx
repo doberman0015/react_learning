@@ -29,6 +29,11 @@ const createCardAction = async ( _prevState, formData ) => {
             }),
         });
 
+        if (!response.ok) {
+            const data = await response.json();
+            throw new Error(data.error || 'Request failed');
+        }
+
         const question = response.json();
         toast.success('New question is successfully created!');
 
@@ -36,6 +41,7 @@ const createCardAction = async ( _prevState, formData ) => {
     } catch (error) {
         console.error('error',error);
         toast.error(error.message);
+        return {};
     }
 }
 
