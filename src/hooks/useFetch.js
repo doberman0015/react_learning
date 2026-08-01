@@ -11,7 +11,7 @@ export const useFetch = (callback) => {
         try {
             setIsLoading(true);
             setError('');
-            await delayFn(1500);
+            await delayFn(1500); // штучна затримка (імітує роботу сервера)
             const response = await callback(arg);
             
             return response;

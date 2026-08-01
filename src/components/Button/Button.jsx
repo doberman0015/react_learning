@@ -2,11 +2,11 @@ import {} from 'react';
 import cls from "./Button.module.css";
 
 export const Button = (props) => {
-    const { onClick, children, className = '', isActive, isDisabled } = props;
+    const { type = 'button', onClick, children, className = '', isActive, isDisabled } = props;
     
     return (
         <button 
-            type="button"
+            type={type}
             className={`${className} ${cls.btn} ${isActive ? cls.active : ""}`}
             disabled={isDisabled}
             onClick={onClick}
