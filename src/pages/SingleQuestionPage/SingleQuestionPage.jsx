@@ -108,7 +108,7 @@ const SingleQuestionPage = () => {
                         </label>
 
                         <div className={cls.buttonsRow}>
-                            <Button className={cls.button} onClick={() => navigate('/editquestion/')} isDisabled={isCardUpdating}>Edit Question</Button>
+                            <Button className={cls.button} onClick={() => navigate(`/editquestion/${questionId}`)} isDisabled={isCardUpdating}>Edit Question</Button>
                             <Button className={cls.button} onClick={() => navigate('/')} isDisabled={isCardUpdating}>Back</Button>
                         </div>
                     </div>

@@ -2,8 +2,11 @@ import { Button } from '../Button';
 import cls from './QestionForm.module.css';
 
 export const QestionForm = ({formAction, formState, isPending, textButton}) => {
+    
     return (
         <form action={formAction} className={cls.form}>
+
+            <input type="hidden" name="questionId" defaultValue={formState.id} />
 
             <div className={cls.fieldWrapper}>
                 <label htmlFor="questionField">Question:</label>
