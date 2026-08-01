@@ -612,52 +612,6 @@
       "level": 1,
       "completed": false,
       "editDate": "25.07.2026, 17:41"
-    },
-    {
-      "question": "Test Question",
-      "answer": "ansver text",
-      "description": "Description: default text",
-      "resources": [
-        "https://www.google.com/",
-        " https://www.google.com/"
-      ],
-      "level": 3,
-      "completed": true,
-      "id": "Tx2Gb8jI1Xs"
-    },
-    {
-      "question": "New question",
-      "answer": "ansver text",
-      "description": "Description test text",
-      "resources": [
-        "https://www.google.com/",
-        " https://www.google.com/",
-        " https://www.google.com/"
-      ],
-      "level": 0,
-      "completed": false,
-      "id": "sKL7Ec1cpgU"
-    },
-    {
-      "question": "New question test",
-      "answer": "Short ansver text",
-      "description": "Description demo text",
-      "resources": [
-        "https://www.google.com/"
-      ],
-      "level": 3,
-      "completed": false,
-      "id": "oCrBBFMBEWU"
-    },
-    {
-      "question": "112233",
-      "answer": "asdasdasd",
-      "description": "asdasdasd",
-      "resources": [],
-      "level": 4,
-      "completed": false,
-      "id": "yeWbUkzlOYY",
-      "editDate": "01.08.2026, 19:26"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -17,3 +17,12 @@
     width: 100%;
     text-align: center;
 }
+.removeBtn{
+    cursor: pointer;
+    background-color: #d84040;
+    color: #ffffff;
+    padding: 3px 15px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+}
