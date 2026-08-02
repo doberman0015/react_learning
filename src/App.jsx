@@ -4,10 +4,11 @@ import { HomePage } from "./pages/HomePage"
 import { Page404 } from "./pages/Page404/"
 import { SingleQuestionPage, SingleQuestionPageLazy } from "./pages/SingleQuestionPage"
 import { AddQuestionPage, AddQuestionPageLazy } from "./pages/AddQuestionPage"
-import { EditQuestionPage } from "./pages/EditQuestionPage"
+import { EditQuestionPage, EditQuestionPageLazy } from "./pages/EditQuestionPage"
 import { AuthProvider } from "./auth/AuthProvider"
 import { useAuth } from "./hooks/useAuth"
 import { ForbiddenPage } from "./pages/ForbiddenPage"
+import { ThemeProvider } from "./theme/ThemeProvider"
 
 const ProtectedRoutes = () => {
   const { isAuth } = useAuth();
@@ -20,26 +21,29 @@ const ProtectedRoutes = () => {
 function App() {
   
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<HomePage/>} />
-            <Route path="/forbidden" element={<ForbiddenPage />} />
-            <Route path="/question/:id" element={<SingleQuestionPageLazy />} />
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<HomePage/>} />
+              <Route path="/forbidden" element={<ForbiddenPage />} />
+              <Route path="/question/:id" element={<SingleQuestionPageLazy />} />
 
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/addquestion" element={<AddQuestionPageLazy />} />
-              <Route path="/editquestion/:id" element={<EditQuestionPage />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/addquestion" element={<AddQuestionPageLazy />} />
+                <Route path="/editquestion/:id" element={<EditQuestionPageLazy />} />
+              </Route>
+              
+
+              <Route path="*" element={<Page404 />} />
+
             </Route>
-            
-
-            <Route path="*" element={<Page404 />} />
-
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
+    
   )
 }
 

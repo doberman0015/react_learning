@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from "react-router-dom";
 import { AUTH_STORAGE } from "../../constants";
+import { ThemeToggler } from "../../features/ThemeToggler";
 
 export const Header = () => {
 
@@ -23,6 +24,7 @@ export const Header = () => {
             </p>
 
             <div className={cls.buttonList}>
+                <ThemeToggler />
                 {isAuth && <Button onClick={() => navigate("/addquestion")}>
                     Add
                 </Button>}

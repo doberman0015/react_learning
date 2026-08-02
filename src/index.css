@@ -55,6 +55,16 @@ body {
   margin: 0;
 }
 
+.darkLayout{
+  --main-bg-color: #23272f;
+  --main-text-color: #fff;
+  --btn-bg-color: #383b3f;
+  --btn-text-color: #fff;
+  --card-bg-color: #343a3f;
+  --card-text-color: #fff;
+  --card-text-box-shadow: rgba(255,255,255,0.05);
+}
+
 *{}
 
 h1, h2, h3, h4, h5, h6 {
