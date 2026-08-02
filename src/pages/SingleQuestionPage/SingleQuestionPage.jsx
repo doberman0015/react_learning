@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Badge } from '../../components/Badge';
 import { Button } from '../../components/Button';
 import { Loader, SmallLoader } from '../../components/Loader';
+import { useAuth } from '../../hooks/useAuth';
 
 const SingleQuestionPage = () => {
 
@@ -14,6 +15,8 @@ const SingleQuestionPage = () => {
     const isCompleted = useId();
     const navigate = useNavigate();
     const {id: questionId} = useParams();
+    const { isAuth } = useAuth();
+    
 
     // якщо card верне "card = null" то ці функції не відпрацюють, тому що не пройдуть перевірку "card !== null"
     const levelVariant = () => (card.level === 1 ? 'primary' : card.level === 2 ? 'warning' :  'alert');
@@ -108,7 +111,7 @@ const SingleQuestionPage = () => {
                         </label>
 
                         <div className={cls.buttonsRow}>
-                            <Button className={cls.button} onClick={() => navigate(`/editquestion/${questionId}`)} isDisabled={isCardUpdating}>Edit Question</Button>
+                            {isAuth && <Button className={cls.button} onClick={() => navigate(`/editquestion/${questionId}`)} isDisabled={isCardUpdating}>Edit Question</Button>}
                             <Button className={cls.button} onClick={() => navigate('/')} isDisabled={isCardUpdating}>Back</Button>
                         </div>
                     </div>
