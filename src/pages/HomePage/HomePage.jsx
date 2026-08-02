@@ -6,13 +6,16 @@ import { Loader } from "../../components/Loader";
 import { useFetch } from "../../hooks/useFetch";
 import { SearchInput } from "../../components/SearchInput";
 import { Button } from "../../components/Button";
+import { useNavigate, useParams } from "react-router-dom";
 
 const DEFAULT_PER_PAGE = 15;
 
 export const HomePage = () => {
 
+    const { page = '1' } = useParams();
+    const currentPage = Number(page);
     const [ questions, setQuestions ] = useState([]);
-    const [ searchParams, setSearchParams ] = useState(`?_page=1&_per_page=${DEFAULT_PER_PAGE}`);
+    const [ searchParams, setSearchParams ] = useState(`?_page=${page}&_per_page=${DEFAULT_PER_PAGE}`);
     const [ searchValue, setSearchValue ] = useState('');
     const [ sortSelectValue, setSortSelectValue ] = useState('');
     const [ countSelectValue, setCountSelectValue ] = useState( DEFAULT_PER_PAGE );
@@ -32,7 +35,8 @@ export const HomePage = () => {
         return questions;
     });
 
-    const getActivePageNumber = () => ( questions.next === null ? questions.last : questions.next -1 );
+    // const getActivePageNumber = () => ( questions.next === null ? questions.last : questions.next -1 );
+    const getActivePageNumber = () => currentPage;
 
     // Старий спосіб отримання данних
     // const [ isLoading, setIsLoading ] = useState(false);
@@ -97,7 +101,7 @@ export const HomePage = () => {
 
     const createUlrParamsStr = ( data = {} ) => {
 
-        const { sortSelectVal = sortSelectValue, page = 1, per_page = countSelectValue } = data;
+        const { sortSelectVal = sortSelectValue, page = currentPage, per_page = countSelectValue } = data;
 
         let urlParams = [
             {'_page' : page },
@@ -136,9 +140,21 @@ export const HomePage = () => {
         setSearchParams( urlParamsStr );
     }
 
+    const navigate = useNavigate();
+
     const paginationHandler = (e) => {
         if( e.target.tagName === "BUTTON" ){
-            createUlrParamsStr( { page : e.target.textContent } );
+
+            const pageNum = e.target.textContent.trim();
+            let pageUrl = '/';
+            if( Number(pageNum) > 1 ){
+                pageUrl = `/page/${pageNum}`;
+            }
+            console.log('pageUrl',pageUrl);
+            
+            navigate(pageUrl);
+
+            createUlrParamsStr( { page : pageNum } );
             controlsContainerRef.current.scrollIntoView({ behavior : 'smooth' });
         }
     }
@@ -176,10 +192,10 @@ export const HomePage = () => {
             { cards.length === 0 && <p className={cls.noCards}>Cards not found.</p> } 
             <QuestionCardList questions={cards} />
             {pagination.length > 1 &&  (
-                <div className={cls.paginationContainer} onClick={paginationHandler}>
+                <div className={cls.paginationContainer} onClick={paginationHandler} >
                     {
                         pagination.map((value) => {
-                            return <Button key={value} isActive={value === getActivePageNumber() }>{value}</Button>
+                            return <Button key={value} isActive={value === getActivePageNumber() } >{value}</Button>
                         })
                     }
                 </div>

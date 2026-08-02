@@ -27,6 +27,7 @@ function App() {
           <Routes>
             <Route element={<MainLayout />}>
               <Route path="/" element={<HomePage/>} />
+              <Route path="/page/:page" element={<HomePage/>} />
               <Route path="/forbidden" element={<ForbiddenPage />} />
               <Route path="/question/:id" element={<SingleQuestionPageLazy />} />
 
